@@ -29,9 +29,13 @@ HDFS
 * Get the Job ID (job_epoch timestamp from RM started_seq number) eg. (job_1462348973456_0001)
 * Once it gets Job ID, It'll Copies Job Resources(.JAR file and dependent .jar files are copied from LFS to HDFS /tmp dir) to HDFS
 * ResourceManager identifies one NodeManager on which some containers will available and inside container tasks will run.
-* NodeManager launches AppMaster.
+* NodeManager launches MRAppMaster.
 * Retrieve InputSplits from HDFS.
 * AppMaster requests resources to ResourceManager.
 
 NOTE: For one job one AppMaster will be there.
       If you have 100 jobs parallely running on your cluster then 100 AppMasters will be there.
+
+
+*** Speculative Execution.
+
