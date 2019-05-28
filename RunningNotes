@@ -39,3 +39,16 @@ NOTE: For one job one AppMaster will be there.
 
 *** Speculative Execution.
 
+org.apache.hadoop.mapred (Old MapReduce API)
+
+org.apache.hadoop.mapreduce
+org.apache.hadoop.mapreduce.lib  (New MapReduce API i.e., MRv2)
+
+* Don't mix new API code with Old API code.
+
+
+To Unit Test your MapReduce programs we've MRUnit which is built by extending the JUnit Framework.
+mrunit-1.0.0-hadoop2.jar
+
+* Data transfer will be less when we use Combiner. -- Combiner is just like a pre reducer.
+* Combiners can be treated as "Local Reducers" in Mapper phase.
