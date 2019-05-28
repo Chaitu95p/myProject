@@ -1,1 +1,27 @@
+Apache Pig Overview(05-28 NS)
 
+Apache Pig:
+----------
+
+* Pig is a layer on top of MapReduce Framework. 
+* Yahoo developed Pig to overcome/abstracts the complexity of MapReduce programming.
+* Pig is a Open source "Data flow language".
+* Pig Latin scripting.
+* Pig converts the scripts into a sequence of MapReduce jobs.
+
+-->  Similar to SQL syntax.
+
+* Pig is not best fit for Video, Audio, etc.,
+* Pig lacks in flow control(loops,case stmsts...)
+
+* Save pig scripts with .pig extension (but .pig is not mandatory, but we need to follow industry standards).
+
+  Pig script --> Pig Engine -->  MR jobs --> YARN --> HDFS
+                      |
+                     Parse
+                      |
+                     Compile
+                      |
+                     Optimize
+                      |
+                     Plan (Converts into MR jobs)
