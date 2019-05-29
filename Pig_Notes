@@ -25,3 +25,57 @@ Apache Pig:
                      Optimize
                       |
                      Plan (Converts into MR jobs)
+
+* Pig is just a client tool. So we just need to install in edge node. No need to install in each and every node in the cluster.
+
+Modes of Pig execution:
+
+* pig -x or else pig -exectype ---> Set execution mode: local|mapreduce, default is mapreduce.
+  Local mode
+  MapReduce mode
+  
+/etc/pig/conf/pig.properties  ---> Pig properties config file
+
+Loading, Viewing & Storing:
+--------------------------
+
+* Reading data from HDFS(Need to use LOAD and STORE functions)
+  Variable/Relation/Schema in Pig terminology
+  
+  A = LOAD 'HDFS File path along with file name' USING PigStore('Delimiter') AS (Field1:Datatype,Filed2:Datatyep,..); //Loading data from HDFS into Bag/Relation/Variable/Schema
+  
+  DUMP A; //To view data
+  
+  STORE A INTO 'HDFS path' USING PigStorage('Delimter'); //Storing data into HDFS permanantly
+  
+NOTE: All your Pig commands will get executed only when they encounter DUMP or STORE 
+      * DESCRIBE command is available in Pig, Hive, Impala and HBase also. It's main purpose is to view the schema.
+      * Tuple(Just like SQL table record) in Pig is just like a SQL record.
+      * Bag(Just like SQL Table) is set of tuples.
+      * Map(Key#value pairs)
+
+{}  --> Bag
+()  --> Tuple
+[]  --> Map
+  
+FOREACH <variable>  GENERATE
+FILTER <variable> BY
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
