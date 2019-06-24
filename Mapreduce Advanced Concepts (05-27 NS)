@@ -1,0 +1,14 @@
+
+•	Coding Efficiency			In Developers Hand
+•	Configuration Properties		In Admin Hands
+•	Cluster Hardware		 	In Infrastructure Team Hands
+
+ 	No.of Containers = No.of tasks we can able to run in parallel.
+
+Eg: 48 Containers means, we’ve a capacity of running 48 tasks in parallel.
+
+256 GB Ram in Node	=	32 GB for Linux OS + 32 GB for HBase + 64 GB for Impala + Rest of the RAM i.e,. 128 GB ram for YARN.
+
+24 Cores 	 48 Vcores	48 Containers
+
+•	In general all nodes have same configurations in the cluster.
