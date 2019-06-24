@@ -12,3 +12,5 @@ Eg: 48 Containers means, we’ve a capacity of running 48 tasks in parallel.
 24 Cores 	 48 Vcores	48 Containers
 
 •	In general all nodes have same configurations in the cluster.
+
+
