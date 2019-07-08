@@ -1,0 +1,6 @@
+OOZIE_URL=http://<your-oozie-server-hostname-or-ip>:11000/oozie
+          https://<your-oozie-server-hostname-or-ip>:11443/oozie
+          
+          Eg:
+          
+          https://polpcdhen001.corp.intranet:11443/oozie/
