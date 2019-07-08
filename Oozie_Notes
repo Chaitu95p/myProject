@@ -4,3 +4,13 @@ OOZIE_URL=http://<your-oozie-server-hostname-or-ip>:11000/oozie
           Eg:
           
           https://polpcdhen001.corp.intranet:11443/oozie/
+
+* In our production cluster "Oozie Server" is installed only on one edge node 1(polpcdhen001.corp.intranet).
+
+NOTES:
+-----
+
+$ oozie help                  --->      display usage for all commands
+$ oozie help [jobs]           --->      display usage for specified command(here it's jobs command). You can mention any valid command like
+                                        admin, job, sla, info etc.,
+
