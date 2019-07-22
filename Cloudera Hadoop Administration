@@ -1,1 +1,32 @@
+4 Pillars of Hadoop Security:-
 
+  1) Authentication with Kerberos
+  2) Authorization using Sentry, ACL
+  3) HDFS encryption using Java KMS
+  4) Auditing & Lineage (Using Cloudera Navigator)
+
+** BDR ---> Cloudera Backup and Disaster Recovery
+            Available only with a Cloudera Enterprise license.
+            
+Pre-requisites for Installing CDH cluster:  (Just config files mentioned. Watch 2nd video for detailed info)
+  -- /etc/rc.local  (To disable transparent huge pages)
+  -- /etc/sysctl.conf   (Change VM swappinnes)
+  -- Disable firewall
+  -- Disable SELinux
+  -- /etc/sysconfig/network .............  Watch Video
+  
+  -- /etc/yum.repos.d 
+  
+** Need to know about password less authentication between cluster nodes.
+
+Imp Commands:
+-----------
+
+$ yum repolist
+$ vgdisplay
+$ yum -y install <Required-command>     (Used to insatll any linux command)
+$ yum list all
+$ yum clean all   (To clear previous cache)
+$ yum makecache   (To update latest cache file)
+
+$ mysql -u <username> -p
