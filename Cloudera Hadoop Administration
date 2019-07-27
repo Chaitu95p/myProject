@@ -28,17 +28,26 @@ $ yum -y install <Required-command>     (Used to insatll any linux command)
 $ yum list all
 $ yum clean all   (To clear previous cache)
 $ yum makecache   (To update latest cache file)
+$ authconfig-tui
 
 $ mysql -u <username> -p
 
 Centralized Authentication used in hadoop servers (cluster):-
 -----------------------------------------------------------
 
--- Hadoop cluster is nothing but a group of servers/machines/nodes. So each server is having an OS(It can be RHEL/CentOS/windows etc.,). So each OS is having a 
-different authentication mechanism. We can create user in each server in the cluster and we can work. Here the main problem will arise when we implement Kerberos authentication. In Kerberos authentication the same user should be present in all the servers. If it's a 1000 nodes cluster then it'll be a problem to create a same user in all 1000 nodes manually. 
+-- Hadoop cluster is nothing but a group of servers/machines/nodes. So each server is having an OS(It can be RHEL/CentOS/windows etc.,).
+   So each OS is having a different authentication mechanism. We can create user in each server in the cluster and we can work. 
+   Here the main problem will arise when we implement Kerberos authentication. In Kerberos authentication the same user should be 
+   present in all the servers. If it's a 1000 nodes cluster then it'll be a problem to create a same user in all 1000 nodes manually. 
 -- To overcome this problem we can use either Active Directory (LDAP + Kerberos) or OpenLDAP.
    LDAP is a protocal. 
    
-   * AD or OpenLDAP implemented server will be integrated with all the servers in the cluster. When a new user wants access to hadoop cluster, Simply admins will create a user in AD or OpenLDAP implemented server. With that created credentials that user can login into hadoop cluster based on assigned groups. Here no need to create user in each and every server in the cluster.
+   * AD or OpenLDAP implemented server will be integrated with all the servers in the cluster. 
+     When a new user wants access to hadoop cluster, Simply admins will create a user in AD or OpenLDAP implemented server. 
+     With that created credentials that user can login into hadoop cluster based on assigned groups. 
+     Here no need to create user in each and every server in the cluster.
    
-   * If AD is used, then to ingrate with unix/linux boxes in the cluster we need 3rd party softwares like Centrify, Quest authentication, SSSD etc.,
+   * If AD is used, then to ingrate with unix/linux boxes in the cluster we need 3rd party softwares 
+     like Centrify, Quest authentication, SSSD etc.,
+     
+   * php LDAP admin is a GUI tool to create users and groups.
