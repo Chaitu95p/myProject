@@ -122,3 +122,25 @@ alias kti='kinit -kt ~/cdlapp.keytab cdlapp@CTL.INTRANET'
 		> GRANT ALL ON SERVER server1 TO ROLE admin_role;
 		> GRANT ROLE admin_role TO sentryadmin
 		(So whoever belongs to sentryadmin group will have admin_role privilege. It has entire server access.)
+
+Cloudera Hadoop Log Managment:-
+
+1) Logs related to Cloudera Manager services,
+2) Logs related to Ecosystem components &
+3) YARN Logs(Very important for trobleshooting a failed job).
+
+
+1---> 	Log file exists on Cloudera Manager Server Node.
+		Log dir === /var/log/cloudera-scm-server/
+		Log file == cloudera-scm-server.log
+		
+		Log file for Cloudera Manager Agents will exists on all Agent Nodes(i.e., all nodes in the cluster)
+		/var/log/cloudera-scm-agent/
+		cloudera-scm-agent.log
+2----> Check in Cloudera Manager service specific configuration for knowing log directory path.
+3----> For trobleshooting YARN jobs you need to go into ResourceManager WebUI.
+
+
+/etc/cloudera-scm-agent/config.ini
+
+
