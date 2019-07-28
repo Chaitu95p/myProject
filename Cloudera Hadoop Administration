@@ -51,3 +51,12 @@ Centralized Authentication used in hadoop servers (cluster):-
      like Centrify, Quest authentication, SSSD etc.,
      
    * php LDAP admin is a GUI tool to create users and groups.
+   
+   
+***********  LDAP URL = ldaps://ctlldapodc.ctl.intranet:636 (Check in HUE configuration in CM)
+
+Adding new host to CDH cluster using Cloudera Manager
+
+
+
+
