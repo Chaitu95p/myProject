@@ -99,5 +99,26 @@ Sentry is just for authorization ( setting up proper permission for users)
 
 Kerberos is one of the pre-requisite for Sentry.
 
-Configuration of Sentry for Hive authorization
+Configuration of Sentry for Hive authorization:-
 
+[ab90629@polpcdhen001 ~]$ id ab90629
+uid=77313300(ab90629) gid=77313300(ab90629) groups=77313300(ab90629),543835435(cdh_prod_cm_readonly),
+543835428(cdh_prod_cn_lineageviewer),543843913(cdh_prod_pentaho_users),543872767(cdlappgrpp),
+543795510(hivebdalabupdatep),543751128(hivereadonlyallp),543891441(jupyteruserp),543835477(sucdlappp)
+[ab90629@polpcdhen001 ~]$ id cdlapp
+uid=38882300(cdlapp) gid=38882300(cdlapp) groups=38882300(cdlapp),543835435(cdh_prod_cm_readonly),
+543872767(cdlappgrpp),543872765(cdlsftpgrp),543795510(hivebdalabupdatep)
+[ab90629@polpcdhen001 ~]$
+
+[cdlapp@polpcdhen001 ~]$ alias kti
+alias kti='kinit -kt ~/cdlapp.keytab cdlapp@CTL.INTRANET'
+
+* Without Sentry - This is kind of WIDE OPEN ACCESS i.e., anyone can access anyones data(database/tables etc.,)
+  So it's not the case in Enterprises. So we need to use sentry for authorization.
+  
+* We can do Sentry administration either from the hive or impala or hue.
+	eg: > CREATE ROLE admin_role;
+		> SHOW ROLES;
+		> GRANT ALL ON SERVER server1 TO ROLE admin_role;
+		> GRANT ROLE admin_role TO sentryadmin
+		(So whoever belongs to sentryadmin group will have admin_role privilege. It has entire server access.)
