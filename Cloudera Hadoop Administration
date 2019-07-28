@@ -58,5 +58,34 @@ Centralized Authentication used in hadoop servers (cluster):-
 Adding new host to CDH cluster using Cloudera Manager
 
 
+Cloudera Kerberization:-
+----------------------
 
+$ yum install krb5-server krb5-libs krb5-workstation
+
+edit /etc/krb5.conf file with kdc server name name 
+
+$ kdb5_util create -s
+
+** Installion & configuration of MIT kerberos KDC server and Kerberizing CDH cluster using cloudera manager
+
+- Select any one server in the cluster as MIT kerberos server.
+https://docs.hortonworks.com/HDPDocuments/HDF3/HDF-3.3.0/enabling-kerberos/content/(optional)_install_a_new_mit_kdc.html
+
+Note: We know how to install & configure MIT kerberos server and how to integrate that kerberos with our cluster using cloudera manager.
+----  Once it's done how to access cluster.
+
+Kerberos principal and keytab creation
+
+ticket-granting ticket (tgt)
+
+** Anyone who need root privilege need to copy root.keytab file and place it somewhere securely and find out 
+   the principal name of root user.
+
+$ kinit -kt <keytab file> <principal name>
+
+Q) Which tgt you own?
+   $ klist
+Q) To destroy/clean tgt?
+   $ kdestroy
 
