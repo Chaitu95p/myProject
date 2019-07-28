@@ -89,3 +89,15 @@ Q) Which tgt you own?
 Q) To destroy/clean tgt?
    $ kdestroy
 
+
+Sentry:-
+------
+
+Sentry is just for authorization ( setting up proper permission for users)
+-- We can control hive and impala databases, tables, coloums etc.,
+-- We can define who can access hive/impala database objects.
+
+Kerberos is one of the pre-requisite for Sentry.
+
+Configuration of Sentry for Hive authorization
+
