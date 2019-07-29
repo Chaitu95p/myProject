@@ -170,4 +170,10 @@ Connecting to PostgreSQL db
 
 Restoring Cloudera Manager From Backup / Migrating Cloudera Manager Server to New Node:-
 
-Migrating Cloudera Manager server to a new node.We can do this in case of Cloudera Manager Server failure or as part of planned migration activity.
+Migrating Cloudera Manager server to a new node.We can do this in case of Cloudera Manager Server failure or as part of 
+planned migration activity.
+
+Migrating namenode service from one server to another. In case of maintenance or Namenode failure we can use this approach 
+to recover the namenode
+
+** The name node directory contains fsimage and edit files inside .
