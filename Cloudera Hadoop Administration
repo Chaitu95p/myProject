@@ -177,3 +177,32 @@ Migrating namenode service from one server to another. In case of maintenance or
 to recover the namenode
 
 ** The name node directory contains fsimage and edit files inside .
+
+HDFS snapshots:-
+
+HDFS Snapshots are read-only point-in-time copies of the file system.
+Snapshots can be taken on a subtree of the file system or the entire file system.
+Some common use cases of snapshots are data backup, protection against user errors and disaster recovery.
+Nested snapshottable directories are currently not allowed. 
+
+Enabling snapshot
+hdfs dfsadmin -allowSnapshot <path>
+Diabling snapshot
+hdfs dfsadmin -disallowSnapshot <path>
+
+** If snapshot is not enabled then we'll get below error
+
+	[ab90629@poldcdhen001 ~]$ hdfs dfsadmin -allowSnapshot WCmrDir
+	allowSnapshot: Access denied for user ab90629. Superuser privilege is required
+	
+	[ab90629@poldcdhen001 ~]$ hdfs dfs -createSnapshot WCmrDir
+	createSnapshot: Directory is not a snapshottable directory: /user/ab90629/WCmrDir
+	
+https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsSnapshots.html
+
+HDFS Snapshot management using Cloudera Manager:-
+
+HDFS Backup and Restore process using HDFS snapshot. Here we're using Cloudera Manager to manage snapshots.
+We need Cloudera Enterprise or Enterprise Trail license to test this feature.
+
+HDFS service in CM --> File Browser
