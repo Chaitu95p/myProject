@@ -144,3 +144,30 @@ Cloudera Hadoop Log Managment:-
 /etc/cloudera-scm-agent/config.ini
 
 
+Dynamic Resource pool configuration in Cloudera:-
+
+** Dynamic resource pools are named configuration of resources and policy for scheduling this resources among YARN applications.
+
+Tuning YARN:-
+
+https://www.cloudera.com/documentation/enterprise/5-4-x/topics/cdh_ig_yarn_tuning.html
+
+Tuning is nothing but defining or changing certain parameters at YARN level.
+** In YARN, We've seen the term Called Container(CPU (Vcores) + Memory).
+
+Cloudera Manager Server Backup:-
+
+We need to take the backup of back end databases(default db is PostgreSQL) and some directories like /etc/cloudera-scm-server 
+and /var/lib/cloudera-scm-server directories. We can use these backup in case of failure and migrate 
+cloudera manager server service to a new node.
+
+Connecting to PostgreSQL db
+
+> psql -U <username> -p 7432 -d <db name>
+
+** To take backup of any file use "pg_dump" command.
+** To take backup of entire db use "pg_dumpall" command.
+
+Restoring Cloudera Manager From Backup / Migrating Cloudera Manager Server to New Node:-
+
+Migrating Cloudera Manager server to a new node.We can do this in case of Cloudera Manager Server failure or as part of planned migration activity.
