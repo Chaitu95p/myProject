@@ -222,3 +222,50 @@ in case of failure/data loss at primary side(prod cluster).
    -- Hive Replication
 
 
+Starting / Stopping CDH Cluster Using Python Scripts:-
+
+We are using python module cm-api.
+Please do install pip and install these modules
+Install epel-relese and pip 
+yum install epel-release
+yum install python-pip
+
+Install configparser and cm-api python modules 
+pip install configparser
+pip install cm-api
+
+https://github.com/hadoopengineering/...
+
+Python script to control Cloudera cluster
+Python script to start Hadoop Cluster
+Python script to stop hadoop cluster
+Cloudera manager api module
+
+
+we will see how to integrate Linux ( Centos /RHEL 7) servers with active directory for centralized authentication.I have already uploaded the video on active directory installation . You can watch the same from this link
+https://www.youtube.com/watch?v=CTRXS...
+
+Login to Linux server and do the following steps
+
+1. Update /etc/hosts and add active directory server IP and host name details
+
+2.Login as root user and execute the following command
+yum install sssd realmd oddjob oddjob-mkhomedir adcli samba-common samba-common-tools krb5-workstation openldap-clients policycoreutils-python
+
+3.Reboot the server
+
+4.Join the server with active directory using following command
+
+realm join --user=administrator  adserver.hadoop.com
+
+5.Make sure it is properly added to the domain using the bellow command
+realm list
+
+6.Update /etc/sssd/sssd.conf file update the following
+
+use_fully_qualified_names = False
+fallback_homedir = /home/%u
+
+7.Restart sssd service
+
+systemctl restart sssd
