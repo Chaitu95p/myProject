@@ -206,3 +206,19 @@ HDFS Backup and Restore process using HDFS snapshot. Here we're using Cloudera M
 We need Cloudera Enterprise or Enterprise Trail license to test this feature.
 
 HDFS service in CM --> File Browser
+
+Cloudera Backup and Disaster Recovery(BDR):-
+
+https://www.cloudera.com/documentation/enterprise/5-9-x/topics/cm_bdr_tutorials.html
+
+Available only for enterprise users.
+
+Taking the backup of Hive databases/HDFS fs to remote DR cluster and recovering it back 
+in case of failure/data loss at primary side(prod cluster).
+
+** Two types of replications are available in Replication Schedules
+   Backup tab in CM --> Replication Schedules
+   -- HDFS Replication
+   -- Hive Replication
+
+
